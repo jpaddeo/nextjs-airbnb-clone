@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 export default function Home({ exploreData, cardsData }) {
   return (
-    <div className=''>
+    <div>
       <Head>
         <title>JPA Airbnb</title>
         <link rel='icon' href='/favicon.ico' />

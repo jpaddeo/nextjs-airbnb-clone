@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import { format } from 'date-fns';
 
+import Head from 'next/head';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import InfoCard from '../components/InfoCard';
@@ -14,6 +16,10 @@ function Search({ searchResults }) {
 
   return (
     <div>
+      <Head>
+        <title>JPA Airbnb | Search</title>
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <Header searchPlaceholder={`${location} | ${range} | ${guests} guests`} />
       <main className='flex'>
         <section className='flex-grow pt-14 px-6'>
