@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import InfoCard from '../components/InfoCard';
+import Map from '../components/Map';
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -24,7 +25,8 @@ function Search({ searchResults }) {
       <main className='flex'>
         <section className='flex-grow pt-14 px-6'>
           <p className='text-xs'>
-            300+ Stays in {range} for {guests} number of guests
+            {searchResults.length}+ Stays in {range} for {guests} number of
+            guests
           </p>
           <h1 className='text-3xl font-semibold mt-2'>Stays in {location}</h1>
           <div className='hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap'>
@@ -40,6 +42,9 @@ function Search({ searchResults }) {
               <InfoCard key={searchResult.img} {...searchResult} />
             ))}
           </div>
+        </section>
+        <section className='hidden xl:inline-flex xl:min-w-[600px]'>
+          <Map searchResults={searchResults} />
         </section>
       </main>
       <Footer />
